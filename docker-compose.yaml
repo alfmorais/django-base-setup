@@ -8,12 +8,13 @@ services:
     volumes:
       - ./src:/src
     environment:
-      - DATABASE_URL=postgresql://postgresql:postgresql@123456@db:5432/rinha_backend
+      - SECRET_KEY=django-insecure-p047#(k^coonxwc^g^b7vnvw3rm0u=dm3fv!k)x*dhan(_%qzt
+      - DATABASE_URL=postgresql://postgresql:postgresql@123456@db:5432/project_name
       - DB_USERNAME=postgresql
       - DB_SECRET=postgresql@123456
       - DB_HOST=db
       - DB_PORT=5432
-      - DB_NAME=rinha_backend
+      - DB_NAME=project_name
     depends_on:
       - db
     deploy:
@@ -29,9 +30,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=api
+      - POSTGRES_DB=project_name
       - POSTGRES_USER=postgresql
-      - POSTGRES_PASSWORD=api123456
+      - POSTGRES_PASSWORD=postgresql@123456
     deploy:
       resources:
         limits:
@@ -44,4 +45,4 @@ volumes:
 networks:
   default:
     driver: bridge
-    name: rinhabackend
+    name: django-base-setup
