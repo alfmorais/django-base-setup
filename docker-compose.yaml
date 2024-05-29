@@ -29,9 +29,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=company_hero
+      - POSTGRES_DB=api
       - POSTGRES_USER=postgresql
-      - POSTGRES_PASSWORD=company_hero123456
+      - POSTGRES_PASSWORD=api123456
     deploy:
       resources:
         limits:
